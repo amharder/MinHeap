@@ -135,18 +135,44 @@ class DynamicArray:
         """
         TODO: Write this implementation
         """
+
+        if self._size >= new_capacity or new_capacity < 0:
+            pass
+
+        else:
+            temp = StaticArray(new_capacity)
+            for i in range(self._size):
+                temp[i] = self._data[i]
+            self._data = temp
+            self._capacity = new_capacity
+
         pass
 
     def append(self, value: object) -> None:
         """
         TODO: Write this implementation
         """
+        if self._capacity == self._size:
+            self.resize(self._capacity * 2)
+
+        self._data[self._size] = value
+        self._size += 1
         pass
 
     def insert_at_index(self, index: int, value: object) -> None:
         """
         TODO: Write this implementation
         """
+        if index < 0 or index > self._size:
+            raise DynamicArrayException
+
+        elif self._size == self._capacity:
+            self.resize(self._capacity * 2)
+
+        temp = self._data[index:self._size]
+        self._data[index] = value
+        self._data[index + 1:self._size + 1] = temp
+        self._size += 1
         pass
 
     def remove_at_index(self, index: int) -> None:

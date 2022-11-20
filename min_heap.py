@@ -1,9 +1,10 @@
-# Name: f
-# OSU Email:
+# Name: Andrew Harder
+# OSU Email: harderan@oregonstate.edu
 # Course: CS261 - Data Structures
-# Assignment:
-# Due Date:
-# Description:
+# Assignment: 5 - MinHeap Implementation
+# Due Date: 11/21/22
+# Description: This is an implementation for the heap ADT. Specifically, this implementation
+# follows a rule that all node values are less than or equal to those of their leaves; thus, MinHeap.
 
 
 from dynamic_array import *
@@ -43,6 +44,7 @@ class MinHeap:
         """
         TODO: Write this implementation
         """
+        
         pass
 
     def is_empty(self) -> bool:
